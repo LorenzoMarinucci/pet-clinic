@@ -3,7 +3,7 @@
   <parent>
     <groupId>lorenzo.springframework</groupId>
     <artifactId>pet-clinic</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
   </parent>
   <artifactId>pet-clinic-web</artifactId>
   <name>pet-clinic-web</name>
@@ -24,7 +24,7 @@
 		<dependency>
 			<groupId>lorenzo.springframework</groupId>
 			<artifactId>pet-clinic-data</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>0.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
