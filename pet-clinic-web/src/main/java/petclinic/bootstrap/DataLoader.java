@@ -3,14 +3,13 @@ package petclinic.bootstrap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
 import petclinic.model.Owner;
 import petclinic.model.Vet;
 import petclinic.services.OwnerService;
 import petclinic.services.VetService;
 
 @Component
-public class DataLoader implements CommandLineRunner {
+public class DataLoader implements CommandLineRunner  {
 
 	private final OwnerService ownerService;
 	private final VetService vetService;
