@@ -11,9 +11,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import petclinic.model.Owner;
 import petclinic.services.OwnerService;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -104,5 +102,16 @@ class OwnerControllerTest {
                 .andExpect(model().attribute("owner", hasProperty("id", is(1L))));
     }
 
+    @Test
+    void processFindFormEmptyReturnMany() throws Exception {
+        when(ownerService.findAllByLastNameLike(anyString())).thenReturn(Arrays.asList(Owner.builder().id(1l).build(),
+                Owner.builder().id(2l).build()));
+
+        mockMvc.perform(get("/owners")
+                .param("lastName",""))
+                .andExpect(status().isOk())
+                .andExpect(view().name("owners/ownersList"))
+                .andExpect(model().attribute("selections", hasSize(2)));;
+    }
 
 }
